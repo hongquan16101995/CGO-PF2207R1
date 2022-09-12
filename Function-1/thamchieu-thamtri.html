@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //lưu ý: tham trị và tham chiếu chỉ xảy ra với 
+    //trường hợp truyền tham số khi gọi hàm
+    let num1 = 5
+    let num2 = 10
+    function swap(a,b) {
+        num1 = 10 //thay đổi giá trị của biến bằng phép gán
+        num2 = 5 //thay đổi giá trị của biến bằng phép gán
+        let temp = a
+        a = b
+        b = temp
+        return "" + "a = " + a + ";b = " + b
+    }
+
+    swap(num1,num2)
+    console.log(swap(num1,num2))
+    num1 = 10000 //thay đổi giá trị của biến bằng phép gán
+    console.log("a = " + num1) //5
+    console.log("b = " + num2) //10
+
+    console.log("---------------")
+
+    let arr = [5,10]
+    function swap1(arr) {
+        let temp = arr[0]
+        arr[0] = arr[1]
+        arr[1] = temp
+        return "" + "a = " + arr[0] + ";b = " + arr[1]
+    }
+    swap1(arr)
+    console.log("a = " + arr[0]) //
+    console.log("b = " + arr[1]) //
+
+</script>
+</html>

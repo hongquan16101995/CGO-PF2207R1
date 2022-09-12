@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    //yêu cầu: viết chương trình, tạo 1 mảng có 100 phần tử, các phần tử được khởi tạo ngẫu nhiên
+    //cho phép người dùng nhập vào 1 số bất kỳ
+    //in các phần tử của mảng đó thành các hàng, mỗi hàng có 10 phần tử
+    //kiểm tra nếu số người dùng vừa nhập có trong mảng hay không, in ra kết quả là vị trí tương ứng
+    function createArray() {
+        let arr = new Array(100)
+        for (let i = 0; i < arr.length; i++) {
+            //Math.random(): trả về kết quả random ngẫu nhiên từ 0 => 1
+            //nhân giá trị đó vs 100 sẽ được kết quả 1 số ngẫu nhiên từ 0 => 100
+            //Math.floor(): trả về giá trị làm tròn gần nhất của 1 số thập phân
+            arr[i] = Math.floor(Math.random() * 101)
+        }
+        return arr
+    }
+
+    function displayArray(arr) {
+        let data = ""
+        for(let i = 0; i < arr.length; i++) {
+            
+            data += (arr[i] + " , ")
+            if(i % 10 === 9) {
+                data += "<br>"
+            }
+        }
+        document.write(data)
+    }
+
+    function checkValue(num, arr) {
+        let index = -1
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] === num) {
+                index = i
+                break
+            }
+        }
+        if (index === -1) {
+            document.write("Number: " + num + " is not in the array<br>")
+            document.write("Index of number: " + num + " in the array is " + index)
+        } else {
+            document.write("Number: " + num + " is in the array<br>")
+            document.write("Index of number: " + num + " in the array is " + index)
+        }
+    }
+
+    let arr = createArray()
+    let number = +prompt("Nhập vào 1 số bất kỳ: ")
+    displayArray(arr)
+    checkValue(number, arr)
+</script>
+</html>
