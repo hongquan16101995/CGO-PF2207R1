@@ -1,0 +1,22 @@
+button {
+    background-color: rgb(37, 182, 37);
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 30px;
+    width: 55px;
+    border-radius: 5px;
+}
+
+#create-div {
+    background-color: silver;
+    text-align: center;
+    padding-top: 15px;
+    width: 260px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+table {
+    width: 500px;
+}

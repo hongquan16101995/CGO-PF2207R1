@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <input id="demo" type="text" oninput="onInput()" 
+    onchange="onChange()" onclick="clickMe()">
+    <p id="result"></p>
+
+    <h1 onclick="demo1(), demo2()">PF2207R1</h1>
+</body>
+<script>
+    function clickMe() {
+        alert("HelloWorld")
+    }
+
+    function onInput() {
+        let value = document.getElementById("demo").value 
+        document.getElementById("result").innerHTML = value
+    }
+
+    function onChange() {
+        document.getElementById("body").style.backgroundColor = "red"
+    }
+
+    function demo1() {
+        alert("PF2207R1")
+    }
+
+    function demo2() {
+        document.getElementById("body").style.backgroundColor = "blue"
+
+    }
+</script>
+</html>
