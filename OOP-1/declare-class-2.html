@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //getter và setter: nhóm các phương thức tác động trực tiếp đến các thuộc tính
+    //getter: dùng để lấy giá trị của thuộc tính tại thời điểm gọi
+    //setter: dùng để thay đổi giá trị thuộc tính lại thời điểm gọi
+
+    //khởi tạo lớp trong Js ES6, sử dụng từ khóa class + constructor
+    class Animal {
+        //khai báo tên của thuộc tính
+        ten
+        tuoi
+        gioitinh
+        cannang
+        chieucao
+
+        //khai báo hàm khởi tạo đối tượng của class Animal
+        constructor(name, age, gender, weight, height) {
+            this.ten = name
+            this.tuoi = age
+            this.gioitinh = gender
+            this.cannang = weight
+            this.chieucao = height
+        }
+
+        //khai báo các phương thức thông thường của class
+        setTen(ten) {
+            this.ten = ten
+        }
+
+        eat() {
+            console.log("Có thể ăn được"); 
+        }
+
+        run(speed) {
+            console.log("Có thể chạy được " + speed + " km/h");
+        }
+    }
+
+    let animal1 = new Animal("Chó", 2, "male", 7, 0.4)
+    console.log(animal1.ten)
+    animal1.setTen("Mèo")
+    console.log(animal1.ten)
+</script>
+</html>

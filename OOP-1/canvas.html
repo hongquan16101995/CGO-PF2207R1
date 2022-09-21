@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="550" style="border: 1px solid;"></canvas>
+    <button onclick="draw(50)">Draw</button>
+    <button onclick="play()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    let x = 50
+    let y = 50
+    let speedX = 5
+    let speedY = 5
+    let interval
+
+    function draw(x,y) {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.fillStyle = "red"
+        ctx.fillRect(x, y, 120, 60)
+    }
+
+    function move(speedX,speedY) {
+        x += speedX
+        y += speedY    
+    }
+
+    function check() {
+        if (y > 470 || y < 40) {
+            speedY = -speedY
+        }
+    }
+
+    function moveRect() {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.clearRect(0,0,800,600)
+        check()
+        move(speedX, speedY)
+        draw(x,y)
+    }
+
+    function play() {
+        interval = setInterval(moveRect, 10)
+    }
+
+    function stop() {
+        clearInterval(interval)
+    }
+</script>
+</html>

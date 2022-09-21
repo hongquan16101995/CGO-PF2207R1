@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //khởi tạo lớp trong Js ES5, sử dụng từ khóa function
+    //từ khóa this: dùng trỏ đến chính bản thân của lớp hiện tại
+    // . : sử dụng để gọi đến các thành phần của lớp: thuộc tính và phương thức
+    function Animal(name, age, gender, weight, height) {
+        //gán giá trị cụ thể cho các thuộc tính khi khai báo đối tượng
+        this.ten = name
+        this.tuoi = age
+        this.gioitinh = gender
+        this.cannang = weight
+        this.chieucao = height
+
+        //khai báo phương thức trong lớp gồm:
+        //tên + thân của phương thức
+        this.changeName = function(newName) {
+            this.ten = newName
+        }
+
+        this.eat = function() {
+            console.log("Có thể ăn được");
+        }
+
+        this.run = function(speed) {
+            console.log("Có thể chạy được " + speed + " km/h");
+        }
+    }
+
+    //khai báo 1 đối tượng sử dụng lớp tự tạo trong Js
+    //từ khóa new: đánh dấu tạo đối tượng mới
+    //tên của đối tượng chính là tên biến đặt ban đầu: animal1
+    let animal1 = new Animal("Chó", 2, "male", 7, 0.4)
+    //sử dụng đối tượng truy xuất thuộc tính
+    console.log(animal1.ten)
+    //sử dụng đối tương truy xuất phương thức
+    animal1.changeName("Mèo")
+    console.log(animal1.ten)
+</script>
+</html>
