@@ -6,17 +6,19 @@ button {
     height: 30px;
     width: 55px;
     border-radius: 5px;
+
 }
 
-#create-div {
+.create-div {
     background-color: silver;
     text-align: center;
     padding-top: 15px;
     width: 260px;
     height: 45px;
     border-radius: 5px;
+    float: left;
 }
 
 table {
-    width: 500px;
+    width: 800px;
 }

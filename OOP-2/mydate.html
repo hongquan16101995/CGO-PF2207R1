@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="createDate()">Create</button>
+</body>
+<script>
+    class MyDate {
+        day
+        month
+        year
+
+        constructor(day, month, year) {
+            this.day = day
+            this.month = month
+            this.year = year
+        }
+
+        getDay() {
+            return this.day
+        }
+
+        getMonth() {
+            return this.month
+        }
+
+        getYear() {
+            return this.year
+        }
+
+        setDay(day) {
+            this.day = day
+        }
+
+        setMonth(month) {
+            this.month = month
+        }
+
+        setYear(year) {
+            this.year = year
+        }
+
+        setDate(day, month, year) {
+            this.day = day
+            this.month = month
+            this.year = year
+        }
+
+        toString() {
+            return "" + this.day + "/" + this.month + "/" + this.year
+        }
+    }
+
+    function createDate() {
+        let checkDay = false
+        let day
+        do {
+            day = +prompt("Nhập vào ngày bạn muốn: ")
+            if (day < 1 || day > 31) {
+                alert("Ngày này không tồn tại!")
+                checkDay = true
+            } else {
+                checkDay = false
+            }
+        } while(checkDay)
+
+
+        let checkMonth = false
+        let month
+        do {
+            month = +prompt("Nhập vào tháng bạn muốn: ")
+            if (month < 1 || month > 12) {
+                alert("Tháng này không tồn tại!")
+                checkMonth = true
+            } else {
+                checkMonth = false
+            }
+        } while(checkMonth)
+
+        let checkYear = false
+        let year
+        do {
+            year = +prompt("Nhập vào năm bạn muốn: ")
+            if (year < 1900 || year > 9999) {
+                alert("Năm này không tồn tại!")
+                checkYear = true
+            } else {
+                checkYear = false
+            }
+        } while(checkYear)
+
+        let date = new MyDate(day, month, year)
+        alert(date.toString())
+    }
+</script>
+</html>

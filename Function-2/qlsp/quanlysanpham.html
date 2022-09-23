@@ -10,12 +10,41 @@
 <body>
     <button style="width: 150px" onclick="displayProduct()">Display list product</button>
     <h1>Add new product</h1>
-    <div id="create-div">
-        <input id="create" type="text" placeholder="New Product">
-        <button onclick="createProduct()">Add</button>
+    <div class="create-div">
+        <input id="nameC" type="text" placeholder="New name product"> 
+    </div>
+    <div class="create-div">   
+        <input id="priceC" type="text" placeholder="New price product">
+    </div>
+    <div class="create-div">
+        <input id="colorC" type="text" placeholder="New color product">
+    </div>
+    <div class="create-div">
+        <input id="brandC" type="text" placeholder="New brand product">
+    </div>
+    <br>
+    <button onclick="createProduct()">Add</button>
+
+    
+    <h1>Update product</h1>
+        <div class="create-div">
+            <input id="nameU" type="text" placeholder="New name product"> 
+        </div>
+        <div class="create-div">   
+            <input id="priceU" type="text" placeholder="New price product">
+        </div>
+        <div class="create-div">
+            <input id="colorU" type="text" placeholder="New color product">
+        </div>
+        <div class="create-div">
+            <input id="brandU" type="text" placeholder="New brand product">
+        </div>
+        <br>
+        <button onclick="edit()">Update</button>
     </div>
     <h1>Display all product</h1>
     <div id="display"></div>
 </body>
+<script src="product.js"></script>
 <script src="quanlysanpham.js"></script>
 </html>
