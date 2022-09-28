@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="500" style="border: 1px solid"></canvas>
+    <button onclick="startRect()">StartRect</button>
+    <button onclick="stopRect()">StopRect</button>
+    <button onclick="startCir()">StartRect</button>
+    <button onclick="stopCir()">StopRect</button>
+</body>
+<script src="rect.js"></script>
+<script src="circle.js"></script>
+<script>
+    let rect = new Rectangle(150, 50, 100, 60, "black")
+    let rect2 = new Rectangle(150, 350, 100, 60, "red")
+    let circle = new Circle(400, 100, 40, "black")
+    let circle2 = new Circle(400, 350, 40, "red")
+    let interval
+    let interval1
+
+    function playRect() {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.clearRect(0,0,800,500)
+        rect.move()
+        rect.draw()
+        rect2.draw()
+        if (isColRect(rect, rect2)) {
+            alert("You die")
+            clearInterval(interval)
+        }
+    }
+
+    function playCicle() {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.clearRect(0,0,800,500)
+        circle.move()
+        circle.draw()
+        circle2.draw()
+        if (isColCircle(circle, circle2)) {
+            alert("You die")
+            clearInterval(interval1)
+        }
+    }
+
+    function startRect() {
+        interval = setInterval(playRect, 50)
+    }
+
+    function stopRect() {
+        clearInterval(interval)
+    }
+    
+    function startCir() {
+        interval1 = setInterval(playCicle, 50)
+    }
+
+    function stopCir() {
+        clearInterval(interval1)
+    }
+    
+    function isColRect(rect1, rect2) {
+        let distanceW = (rect1.x + (rect1.width/2)) - (rect2.x + (rect2.width/2))
+        if (distanceW < 0) {
+            distanceW = -distanceW
+        }
+        let widthTwoRect = (rect1.width + rect2.width)/2
+        let distanceH = (rect1.y + (rect1.height/2)) - (rect2.y + (rect2.height/2))
+        if (distanceH < 0) {
+            distanceH = -distanceH
+        }
+        let heightTwoRect = (rect1.height + rect2.height)/2
+        return (distanceW < widthTwoRect && distanceH < heightTwoRect)
+    }
+
+    function isColCircle(circle1, circle2) {
+        let distance = Math.pow((circle1.x - circle2.x),2) + Math.pow((circle1.y - circle2.y),2)
+        let distanceR = Math.pow((circle1.radius + circle2.radius), 2)
+        return distanceR > distance
+    }
+
+    function moveSelection(evt) {
+        switch(evt.keyCode) {
+            case 37:
+                rect2.x -= 5
+                break
+            case 38:
+                rect2.y -= 5
+                break
+            case 39:
+                rect2.x += 5
+                break
+            case 40:
+                rect2.y += 5
+                break
+        }
+    }
+
+    function moveSelection1(evt) {
+        switch(evt.keyCode) {
+            case 65:
+                circle2.x -= 5
+                break
+            case 87:
+                circle2.y -= 5
+                break
+            case 68:
+                circle2.x += 5
+                break
+            case 83:
+                circle2.y += 5
+                break
+        }
+    }
+
+    window.addEventListener("keydown", moveSelection)
+    window.addEventListener("keydown", moveSelection1)
+</script>
+</html>

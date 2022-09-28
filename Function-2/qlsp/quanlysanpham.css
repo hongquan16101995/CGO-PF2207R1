@@ -4,7 +4,7 @@ button {
     font-weight: bold;
     border: none;
     height: 30px;
-    width: 55px;
+    width: 75px;
     border-radius: 5px;
 
 }
@@ -13,12 +13,12 @@ button {
     background-color: silver;
     text-align: center;
     padding-top: 15px;
-    width: 260px;
+    width: 200px;
     height: 45px;
     border-radius: 5px;
     float: left;
 }
 
 table {
-    width: 800px;
+    width: 950px;
 }
