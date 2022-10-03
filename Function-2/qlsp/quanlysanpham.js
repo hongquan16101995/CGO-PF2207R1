@@ -110,6 +110,7 @@ function addToCart(index) {
     //nếu là sản phẩm mới thì tạo mới trong giỏ hàng
     if (check) {
         let cartElement = new Cart(array[index],1)
+        console.log(cartElement);
         arrayCart.push(cartElement)
     }
     array[index].quantity -= 1
