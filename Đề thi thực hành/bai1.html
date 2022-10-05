@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function createArray() {
+        let length = +prompt("Nhập độ dài mảng điểm: ")
+        let arr = new Array(length)
+        for(let i = 0; i < arr.length; i++) {
+            arr[i] = +prompt("Nhập vào điểm thứ " + (i + 1) + ": ")
+        }
+        return arr
+    }
+
+    function findAvg(arr) {
+        let sum = 0
+        for(let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        let avg = sum / arr.length
+        return avg
+    }
+
+    //test bài 1
+    // let arr = [7,8,10]
+    let arr = createArray()
+    console.log(findAvg(arr));
+</script>
+</html>

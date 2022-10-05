@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function insertNumberToArray(arr, x, index) {
+        if (index > 0 && index < arr.length) {
+            for(let i = arr.length; i > index; i--) {
+                arr[i] = arr[i - 1]
+            }
+            arr[index] = x
+        }
+        return arr
+    }
+
+    //test bài 2
+    let arr = [1,2,3,4]
+    let x = 100
+    let index = 3
+    console.log(insertNumberToArray(arr, x, index));
+</script>
+</html>
